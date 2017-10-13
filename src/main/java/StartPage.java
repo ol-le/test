@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-;import java.net.MalformedURLException;
 
 public class StartPage {
 
@@ -19,13 +18,13 @@ public class StartPage {
     }
 
     public WebElement getLoginButton(){
-        By loginButtonBy = By.id(Constants.appPackageName + ":id/login_button");
+        By loginButtonBy = By.id(Constants.appPackageName + Constants.loginButtonId);
         loginButton = DriverContext.getDriverInstance().findElement(loginButtonBy);
         return loginButton;
     }
 
     public WebElement getRegisterButton(){
-        By registerButtonBy = By.id(Constants.appPackageName + ":id/register_button");
+        By registerButtonBy = By.id(Constants.appPackageName + Constants.registerButtonId);
         registerButton = DriverContext.getDriverInstance().findElement(registerButtonBy);
         return registerButton;
     }

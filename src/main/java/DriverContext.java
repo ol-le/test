@@ -24,7 +24,7 @@ public class DriverContext {
         capabilities.setCapability("device", "Android");
         capabilities.setCapability("deviceName", "Android");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("app", Constants.appPath);
+        capabilities.setCapability("app", System.getProperty("APK_PATH"));
 
         try {
             driverInstance = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -37,7 +37,7 @@ public class DriverContext {
 
     public static void close() {
         if (driverInstance == null)
-            throw new IllegalStateException("Driver not initialized");
+            throw new NullPointerException("Driver not initialized");
         else {
             driverInstance.hideKeyboard();
             driverInstance.quit();

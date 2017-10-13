@@ -18,19 +18,19 @@ public class EmailPage{
     }
 
     public WebElement getEmailField(){
-        By emailFieldBy = By.id(Constants.appPackageName + ":id/email_input");
+        By emailFieldBy = By.id(Constants.appPackageName + Constants.emailInputId);
         emailField = DriverContext.getDriverInstance().findElement(emailFieldBy);
         return emailField;
     }
 
     public WebElement getConfirmButton(){
-        By confirmButtonBy = By.id(Constants.appPackageName + ":id/next_button");
+        By confirmButtonBy = By.id(Constants.appPackageName + Constants.nextButtonId);
         confirmButton = DriverContext.getDriverInstance().findElement(confirmButtonBy);
         return confirmButton;
     }
 
     public EmailPage inputEmail(String email){
-        getEmailField().sendKeys("ottonova-test.de");
+        getEmailField().sendKeys(email);
         return this;
     }
 
